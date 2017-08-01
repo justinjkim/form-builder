@@ -100,7 +100,10 @@ for (let counter = 0; counter < formData.length; counter++) {
   let formBody = document.getElementById('fields');
   let newLabel = document.createElement('input');
   formBody.appendChild(newLabel);
-  for (var key in formData[counter]) {
-    console.log(key + "=" + formData[counter][key]);
+
+  // second for loop that will go through the key-value pairs per property in the formData array
+  for (let key in formData[counter]) {
+    newLabel.setAttribute(key, formData[counter][key])
+    
   }
 }
