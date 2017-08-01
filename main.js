@@ -100,7 +100,7 @@ for (let counter = 0; counter < formData.length; counter++) {
   let formBody = document.getElementById('fields');
   let newLabel = document.createElement('input');
   formBody.appendChild(newLabel);
-  // for (let property = 0; property < formData[counter].length; property++) {
-  //   let newLabelProperty =
-  // }
+  for (var key in formData[counter]) {
+    console.log(key + "=" + formData[counter][key]);
+  }
 }
