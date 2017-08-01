@@ -97,8 +97,10 @@ let formData = [
 
 // -------- Your Code Goes Below this Line --------
 for (let counter = 0; counter < formData.length; counter++) {
+  let formBody = document.getElementById('fields');
   let newLabel = document.createElement('input');
-  for (let property = 0; property < formData[counter].length; property++) {
-    
-  }
+  formBody.appendChild(newLabel);
+  // for (let property = 0; property < formData[counter].length; property++) {
+  //   let newLabelProperty =
+  // }
 }
