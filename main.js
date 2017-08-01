@@ -96,5 +96,9 @@ let formData = [
 
 
 // -------- Your Code Goes Below this Line --------
-
-
+for (let counter = 0; counter < formData.length; counter++) {
+  let newLabel = document.createElement('input');
+  for (let property = 0; property < formData[counter].length; property++) {
+    
+  }
+}
