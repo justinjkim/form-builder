@@ -104,8 +104,24 @@ function createForm() {
     if (formData[counter]["type"] === "select") {
       let select = document.createElement("select");
       formBody.appendChild(select);
+      let optionDefault = document.createElement("option");
+      optionDefault.innerHTML = "Select a language...";
+      select.appendChild(optionDefault);
+      for (let x = 0; x < formData[counter]["options"].length; x++) {
+        let optionValue = document.createElement("option");
+        optionValue.innerHTML = formData[counter]["options"][x]["label"];
+        optionValue.setAttribute("value", formData[counter]["options"][x]["value"]);
+        select.appendChild(optionValue);
+      } // end of "for" loop for adding the option and its values
+    }
 
-    } else {
+    else if (formData[counter]["type"] === "textarea") {
+      let textarea = document.createElement("textarea");
+      formBody.appendChild(textarea);
+      textarea.setAttribute("placeholder", formData[counter]["label"]);
+    }
+
+    else {
       let newLabel = document.createElement('input');
       formBody.appendChild(newLabel);
 
