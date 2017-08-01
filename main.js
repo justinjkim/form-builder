@@ -96,27 +96,26 @@ let formData = [
 
 
 // -------- Your Code Goes Below this Line --------
-for (let counter = 0; counter < formData.length; counter++) {
+function createForm() {
   let formBody = document.getElementById('fields');
-  let newLabel = document.createElement('input');
-  formBody.appendChild(newLabel);
 
-  for (let key in formData[counter]) {
-    newLabel.setAttribute(key, formData[counter][key])
-    newLabel.setAttribute('placeholder', formData[counter]["label"]);
+  for (let counter = 0; counter < formData.length; counter++) {
 
-    // if conditional
-    if (key["type"] === "select") {
+    if (formData[counter]["type"] === "select") {
+      let select = document.createElement("select");
+      formBody.appendChild(select);
 
-      for (let options in formData[counter]["type"]) {
-        let option = document.createElement('option');
-        console.log(option);
+    } else {
+      let newLabel = document.createElement('input');
+      formBody.appendChild(newLabel);
 
-      }
-    }
-  }
+      for (let key in formData[counter]) {
+        newLabel.setAttribute(key, formData[counter][key])
+        newLabel.setAttribute('placeholder', formData[counter]["label"]);
+      } // end of attribute assignment for loop
+    } // end of "else" statement
+  } // end of main for loop
 
+} // end of createForm function
 
-
-
-} // end of main for loop
+createForm();
