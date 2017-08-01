@@ -101,7 +101,6 @@ for (let counter = 0; counter < formData.length; counter++) {
   let newLabel = document.createElement('input');
   formBody.appendChild(newLabel);
 
-  // second for loop that will go through the key-value pairs per property in the formData array
   for (let key in formData[counter]) {
     newLabel.setAttribute(key, formData[counter][key])
     newLabel.setAttribute('placeholder', formData[counter]["label"]);
@@ -111,8 +110,13 @@ for (let counter = 0; counter < formData.length; counter++) {
 
       for (let options in formData[counter]["type"]) {
         let option = document.createElement('option');
+        console.log(option);
 
       }
     }
   }
-}
+
+
+
+
+} // end of main for loop
