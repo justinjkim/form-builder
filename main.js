@@ -99,8 +99,8 @@ let formData = [
 function createForm() {
   let formBody = document.getElementById('fields');
 
-  for (let counter = 0; counter < formData.length; counter++) {
 
+  for (let counter = 0; counter < formData.length; counter++) {
     if (formData[counter]["type"] === "select") {
       let select = document.createElement("select");
       formBody.appendChild(select);
@@ -129,6 +129,11 @@ function createForm() {
         newLabel.setAttribute(key, formData[counter][key])
         newLabel.setAttribute('placeholder', formData[counter]["label"]);
       } // end of attribute assignment for loop
+
+      let icon = document.createElement('i');
+      newLabel.appendChild(icon);
+      icon.setAttribute('class', formData[counter]["icon"]);
+      icon.className = "fa " + icon.className;
     } // end of "else" statement
   } // end of main for loop
 
